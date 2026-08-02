@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{50859937-4700-4C61-B662-E70A34A51B80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaba.Platform.Api", "src\Kaba.Platform.Api\Kaba.Platform.Api.csproj", "{CFF29F92-6A0D-421B-ABB0-7F48E5E03A03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaba.Platform.Core", "src\Kaba.Platform.Core\Kaba.Platform.Core.csproj", "{99D79761-BA41-441E-9ADE-A54F394F9B7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaba.Platform.Infrastructure", "src\Kaba.Platform.Infrastructure\Kaba.Platform.Infrastructure.csproj", "{7A174C67-F644-4E26-99D9-DB789D8B9FF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaba.Platform.PrestaShop", "src\Kaba.Platform.PrestaShop\Kaba.Platform.PrestaShop.csproj", "{97DAC3E6-1C30-4A8A-BC67-53BB54AFA7EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaba.Platform.AI", "src\Kaba.Platform.AI\Kaba.Platform.AI.csproj", "{A9441E1B-2767-4AA9-987E-05D604DC4A59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFF29F92-6A0D-421B-ABB0-7F48E5E03A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFF29F92-6A0D-421B-ABB0-7F48E5E03A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFF29F92-6A0D-421B-ABB0-7F48E5E03A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFF29F92-6A0D-421B-ABB0-7F48E5E03A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99D79761-BA41-441E-9ADE-A54F394F9B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D79761-BA41-441E-9ADE-A54F394F9B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99D79761-BA41-441E-9ADE-A54F394F9B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99D79761-BA41-441E-9ADE-A54F394F9B7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A174C67-F644-4E26-99D9-DB789D8B9FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A174C67-F644-4E26-99D9-DB789D8B9FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A174C67-F644-4E26-99D9-DB789D8B9FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A174C67-F644-4E26-99D9-DB789D8B9FF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97DAC3E6-1C30-4A8A-BC67-53BB54AFA7EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97DAC3E6-1C30-4A8A-BC67-53BB54AFA7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97DAC3E6-1C30-4A8A-BC67-53BB54AFA7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97DAC3E6-1C30-4A8A-BC67-53BB54AFA7EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9441E1B-2767-4AA9-987E-05D604DC4A59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9441E1B-2767-4AA9-987E-05D604DC4A59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9441E1B-2767-4AA9-987E-05D604DC4A59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9441E1B-2767-4AA9-987E-05D604DC4A59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CFF29F92-6A0D-421B-ABB0-7F48E5E03A03} = {50859937-4700-4C61-B662-E70A34A51B80}
+		{99D79761-BA41-441E-9ADE-A54F394F9B7B} = {50859937-4700-4C61-B662-E70A34A51B80}
+		{7A174C67-F644-4E26-99D9-DB789D8B9FF2} = {50859937-4700-4C61-B662-E70A34A51B80}
+		{97DAC3E6-1C30-4A8A-BC67-53BB54AFA7EF} = {50859937-4700-4C61-B662-E70A34A51B80}
+		{A9441E1B-2767-4AA9-987E-05D604DC4A59} = {50859937-4700-4C61-B662-E70A34A51B80}
+	EndGlobalSection
+EndGlobal

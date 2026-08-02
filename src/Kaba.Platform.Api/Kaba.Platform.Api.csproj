@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kaba.Platform.Core\Kaba.Platform.Core.csproj" />
+    <ProjectReference Include="..\Kaba.Platform.Infrastructure\Kaba.Platform.Infrastructure.csproj" />
+    <ProjectReference Include="..\Kaba.Platform.PrestaShop\Kaba.Platform.PrestaShop.csproj" />
+    <ProjectReference Include="..\Kaba.Platform.AI\Kaba.Platform.AI.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>kaba_connector</RootNamespace>
+  </PropertyGroup>
+
+</Project>
