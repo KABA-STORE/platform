@@ -7,3 +7,6 @@ publish/
 .env.*
 appsettings.Production.json
 *.log
+
+# macOS metadata
+.DS_Store
