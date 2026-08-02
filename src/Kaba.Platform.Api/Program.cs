@@ -1,5 +1,6 @@
 using Kaba.Platform.PrestaShop.Abstractions;
 using Kaba.Platform.PrestaShop.Authentication;
+using Kaba.Platform.PrestaShop.Categories;
 using Kaba.Platform.PrestaShop.Configuration;
 using Kaba.Platform.PrestaShop.Http;
 
@@ -29,6 +30,10 @@ builder.Services.AddHttpClient<ITokenService, OAuthTokenService>();
 // All PrestaShop services use this authenticated client instead of
 // handling HTTP headers, tokens, serialization, or errors themselves.
 builder.Services.AddHttpClient<IPrestaShopClient, PrestaShopClient>();
+
+// Category operations use the shared authenticated PrestaShop client.
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+
 var app = builder.Build();
 
 app.MapGet("/", () => Results.Ok(new
@@ -58,6 +63,18 @@ app.MapGet(
             status = "authenticated",
             tokenReceived = !string.IsNullOrWhiteSpace(token)
         });
+    });
+
+app.MapGet(
+    "/internal/prestashop/categories",
+    async (
+        ICategoryService categoryService,
+        CancellationToken cancellationToken) =>
+    {
+        var categories = await categoryService.GetAllAsync(
+            cancellationToken);
+
+        return Results.Ok(categories);
     });
 
 app.Run();
