@@ -1,6 +1,7 @@
 using Kaba.Platform.PrestaShop.Abstractions;
 using Kaba.Platform.PrestaShop.Authentication;
 using Kaba.Platform.PrestaShop.Configuration;
+using Kaba.Platform.PrestaShop.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,8 +23,12 @@ var prestaShopOptions = new PrestaShopOptions
 
 builder.Services.AddSingleton(prestaShopOptions);
 
+// The token service handles OAuth authentication and caches access tokens.
 builder.Services.AddHttpClient<ITokenService, OAuthTokenService>();
 
+// All PrestaShop services use this authenticated client instead of
+// handling HTTP headers, tokens, serialization, or errors themselves.
+builder.Services.AddHttpClient<IPrestaShopClient, PrestaShopClient>();
 var app = builder.Build();
 
 app.MapGet("/", () => Results.Ok(new
