@@ -3,6 +3,7 @@ using Kaba.Platform.PrestaShop.Authentication;
 using Kaba.Platform.PrestaShop.Categories;
 using Kaba.Platform.PrestaShop.Configuration;
 using Kaba.Platform.PrestaShop.Http;
+using Kaba.Platform.PrestaShop.Products;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,8 +32,9 @@ builder.Services.AddHttpClient<ITokenService, OAuthTokenService>();
 // handling HTTP headers, tokens, serialization, or errors themselves.
 builder.Services.AddHttpClient<IPrestaShopClient, PrestaShopClient>();
 
-// Category operations use the shared authenticated PrestaShop client.
+// Catalog services use the shared authenticated PrestaShop client.
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 
@@ -77,4 +79,40 @@ app.MapGet(
         return Results.Ok(categories);
     });
 
+app.MapGet(
+    "/internal/prestashop/products",
+    async (
+        IProductService productService,
+        int? limit,
+        CancellationToken cancellationToken) =>
+    {
+        var products = await productService.GetAllAsync(
+            limit ?? 50,
+            cancellationToken);
+
+        return Results.Ok(products);
+    });
+
+app.MapPost(
+    "/internal/prestashop/products/basic",
+    async (
+        CreateBasicProductRequest request,
+        IProductService productService,
+        CancellationToken cancellationToken) =>
+    {
+        var product = await productService.CreateBasicAsync(
+            request.Name,
+            cancellationToken);
+
+        return Results.Created(
+            $"/internal/prestashop/products/{product.ProductId}",
+            product);
+    });
+
 app.Run();
+
+/// <summary>
+/// Represents the minimal API request used to create the initial
+/// PrestaShop product record.
+/// </summary>
+public sealed record CreateBasicProductRequest(string Name);
